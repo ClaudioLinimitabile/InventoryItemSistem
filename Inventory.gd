@@ -31,7 +31,7 @@ func SwapItem(item:Item,destination_slot:int,FORCE_SWAP:bool=false) ->void:
 				Slot[destination_slot] = NEWI
 				Slot[destination_slot].quantity = qt
 				if rs < 1:
-					Slot[x]=null
+					Slot[x]=Item.new()
 				else:
 					var NEWX = Slot[x].duplicate()
 					Slot[x] = NEWX
@@ -45,7 +45,7 @@ func SplitQuantity(item:Item,qt:int) -> Item:
 		newI.quantity = qt
 		item.quantity -= qt
 		return newI
-	Slot[GetSlot(item)] = null
+	Slot[GetSlot(item)] = Item.new()
 	return item
 
 
